@@ -49,5 +49,11 @@ document.getElementById("deposit-btn").addEventListener("click", function () {
         const newDdepositTotal = depositWithdrawField("deposit-add", newDepositValue);
         updateBalance(newDepositValue, true);
     }
-
+})
+document.getElementById("withdraw-btn").addEventListener("click", function () {
+    const withdrawFieldAmount = getInputValue("withdraw-input");
+    if (withdrawFieldAmount > 0) {
+        depositWithdrawField("withdraw-amount", withdrawFieldAmount);
+        updateBalance(withdrawFieldAmount, false);
+    }
 })
