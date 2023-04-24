@@ -29,3 +29,17 @@ function depositWithdrawField(depositWithdrawAdd, newDepositValue) {
     const newDdepositTotal = previousDepositAmountValue + newDepositValue;
     depositField.innerText = newDdepositTotal;
 }
+// Get update main balance.........
+function updateBalance(newDepositValue, isAddition) {
+    const totalBalance = document.getElementById("balance-total");
+    const totalBalanceTextValue = totalBalance.innerText;
+    const totalBalanceValue = parseFloat(totalBalanceTextValue);
+    if (isAddition == true) {
+        const totalBalanceAmount = totalBalanceValue + newDepositValue;
+        totalBalance.innerText = totalBalanceAmount;
+    }
+    else {
+        const totalBalanceAmount = totalBalanceValue - newDepositValue;
+        totalBalance.innerText = totalBalanceAmount;
+    }
+}
