@@ -43,3 +43,11 @@ function updateBalance(newDepositValue, isAddition) {
         totalBalance.innerText = totalBalanceAmount;
     }
 }
+document.getElementById("deposit-btn").addEventListener("click", function () {
+    const newDepositValue = getInputValue("deposit-input");
+    if (newDepositValue > 0) {
+        const newDdepositTotal = depositWithdrawField("deposit-add", newDepositValue);
+        updateBalance(newDepositValue, true);
+    }
+
+})
